@@ -17,7 +17,7 @@ chrome划词翻译插件是能够在任何页面使用的划词查询工具，�
 
 1. 在<a href="https://github.com/Ovilia/handian-chrome-extension/tree/master/download">download文件夹</a>选择版本号最大的文件下载
 2. 打开Chrome，菜单->工具->扩展程序
-3. 将已下载的crx文件拖入Chrome窗口
+3. 将已下载的.zip文件解压，选择加载已解压的扩展程序。
 
 ## 使用方法
 
