@@ -8,7 +8,7 @@ chrome划词翻译插件是能够在任何页面使用的划词查询工具，�
 
 ## 截图
 
-![]()
+![](https://github.com/jiaxiaoweist/translation-extensions/blob/master/res/screenshoot-1.png)
 
 ## 下载地址
 ### 如果你不能访问Chrome Web Store
@@ -36,4 +36,4 @@ chrome划词翻译插件是能够在任何页面使用的划词查询工具，�
 
 ## 问题反馈
 
-有问题的话，<a href="">报个issue</a>吧！
+有问题的话，<a href="https://github.com/jiaxiaoweist/translation-extensions/issues/new">报个issue</a>吧！
