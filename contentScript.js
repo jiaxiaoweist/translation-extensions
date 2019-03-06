@@ -29,6 +29,8 @@ Panel.prototype.bind = function () {
     };
 };
 
+
+
 Panel.prototype.translate = function (raw,pos) {
     if(pos){
         this.setPos(pos)
@@ -42,16 +44,32 @@ client=gtx&sl=en&tl=zh&dt=t&q=${raw}`)
             this.container.querySelector('.dest .content').innerText = result[0][0][0];
         })
 };
+
+
 Panel.prototype.setPos = function (pos) {
     this.container.style.top = pos.y + 'px';
     this.container.style.left = pos.x + 'px';
 };
+
 let panel = new Panel();
+
+
+let panelSwitch = 'off';
+
+chrome.storage.sync.get(['switch'], function(result) {
+    console.log('Value currently is ' + result.switch);
+    if(result.switch) {
+        panelSwitch = result.switch
+    }
+  })
+
+
 
 
 
 document.onclick = function (e) {
     var selectStr = window.getSelection().toString().trim();
     if (selectStr === '') return;
+    if(panelSwitch === 'off') return;
     panel.translate(selectStr,{x:e.clientX,y:e.clientY});
 };

@@ -1,0 +1,39 @@
+  {
+    "name": "饥人谷翻译",
+    "version": "1.0",
+    "description": "一款超简洁好用的多语言划词翻译工具",
+    "manifest_version": 2,
+    "permissions": [
+      "activeTab",
+      "storage",
+      "contextMenus",
+      "tabs"
+    ], 
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }, 
+     "content_scripts": [
+       {
+         "matches": ["<all_urls>"],
+         "css": ["contentScript.css"],
+         "js": ["contentScript.js"]
+       }
+     ],
+      "browser_action": {
+        "default_icon": {                    
+          "16": "images/icon16.png",
+          "32": "images/icon32.png",
+          "48": "images/icon48.png"          
+        },
+        "default_title": "饥人谷翻译",      
+        "default_popup": "popup.html"        
+      },
+       "options_page": "options.html",
+    "icons": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  }
