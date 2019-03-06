@@ -31,18 +31,36 @@ Panel.prototype.bind = function () {
 
 
 
-Panel.prototype.translate = function (raw,pos) {
-    if(pos){
-        this.setPos(pos)
+Panel.prototype.translate = function(raw, pos) {
+  if(pos) {
+    this.setPos(pos)
+  }
+
+  let slValue = 'en'
+  let tlValue = 'zh-CN'
+
+  this.container.querySelector('.source .content').innerText = raw;
+  chrome.storage.sync.get(['sl', 'tl'], (result)=> {
+    console.log(this.container.querySelector('.source .title'));
+    console.log(result.sl,result.tl);
+    if(result.sl) {
+      slValue = result.sl.value;
+      console.log(result.sl.key);
+      this.container.querySelector('.source .title').innerText = result.sl.key
     }
-    this.container.classList.add('show');
-    this.container.querySelector('.source .content').innerText = raw;
-    fetch(`https://translate.googleapis.com/translate_a/single?
-client=gtx&sl=en&tl=zh&dt=t&q=${raw}`)
-        .then(res => res.json())
-        .then(result => {
-            this.container.querySelector('.dest .content').innerText = result[0][0][0];
-        })
+    if(result.tl) {
+      tlValue = result.tl.value
+      this.container.querySelector('.dest .title').innerText = result.tl.key
+    }
+    fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=${slValue}&tl=${tlValue}&dt=t&q=${raw}`)
+    .then(res => res.json())
+    .then(result => {
+      this.container.querySelector('.dest .content').innerText = result[0][0][0]
+    })
+  });
+  this.container.classList.add('show')
+
+
 };
 
 
