@@ -37,6 +37,10 @@ chrome划词翻译插件是能够在任何页面使用的划词查询工具，�
 
 - 添加开关。
 ![](https://github.com/jiaxiaoweist/translation-extensions/blob/master/res/screenshoot-2.png)
+### v1.2
+
+- 添加多语言翻译。
+![](https://github.com/jiaxiaoweist/translation-extensions/blob/master/res/screenshoot-3.png)
 
 ## 问题反馈
 
